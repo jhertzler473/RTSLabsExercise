@@ -8,12 +8,12 @@ namespace RTSLabsExercise
 {
     public static class InputChecker
     {
-        public static Dictionary<string, int> AboveBelow(List<int> integerList, int comparison, bool inclusive = false)
+        public static Dictionary<string, int> AboveBelow(List<int> integerList, int comparison)
         {
             return new Dictionary<string, int>
             {
-                { "above", integerList.Count(val => inclusive ? val >= comparison : val > comparison) },
-                { "below", integerList.Count(val => inclusive ? val <= comparison : val < comparison) }
+                { "above", integerList.Count(val => val > comparison) },
+                { "below", integerList.Count(val => val < comparison) }
             };
         }
 
